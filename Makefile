@@ -4,6 +4,7 @@ SUBDIRS += 03-hello-world
 SUBDIRS += 04-chardev
 SUBDIRS += 05-procfs-static
 SUBDIRS += 06-procfs-buffer
+SUBDIRS += 07-procfs-inode
 
 BEAR ?= 0
 
