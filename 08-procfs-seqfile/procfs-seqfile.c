@@ -109,10 +109,10 @@ int __init procfs_seqfile_init(void) {
 
 void __exit procfs_seqfile_exit(void) {
 
-    // free private data and remove sequence file in proc file system
+    // remove module before freeing private data
 
-    kfree(procfs_seqfile_data);
     proc_remove(procfs_seqfile_file);
+    kfree(procfs_seqfile_data);
 
     if (procfs_seqfile_param_debug) {
         pr_info("[%s:%s] removed seqfile \"%s\" in procfs\n", PROCFS_SEQFILE_MODULE_NAME, __func__, PROCFS_SEQFILE_FILE_NAME);

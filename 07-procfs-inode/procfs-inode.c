@@ -96,8 +96,10 @@ int __init procfs_inode_init(void) {
 
 void __exit procfs_inode_exit(void) {
 
-    kfree(procfs_inode_proc_context);
+    // remove module before freeing private data
+
     proc_remove(procfs_inode_proc_file);
+    kfree(procfs_inode_proc_context);
 
     if (procfs_inode_param_debug) {
         pr_info("[%s:%s] removed /proc/%s\n", PROCFS_INODE_MODULE_NAME, __func__, PROCFS_INODE_FILE_NAME);
