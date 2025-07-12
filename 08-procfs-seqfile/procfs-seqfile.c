@@ -298,6 +298,8 @@ static void procfs_seqfile_seq_stop(struct seq_file* seq, void *iter) {
         return;
     }
 
+    // the above check ensures that mutex_unlock is always correct
+
     mutex_unlock(&context->mutex);
 
     return;

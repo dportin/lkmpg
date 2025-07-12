@@ -6,6 +6,7 @@ SUBDIRS += 05-procfs-static
 SUBDIRS += 06-procfs-buffer
 SUBDIRS += 07-procfs-inode
 SUBDIRS += 08-procfs-seqfile
+SUBDIRS += 09-sysfs-attrs
 
 BEAR ?= 0
 
