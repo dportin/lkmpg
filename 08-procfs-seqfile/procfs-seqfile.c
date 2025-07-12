@@ -16,8 +16,8 @@
 // - tail -n +11 /proc/procfs-seqfile | head -n4
 // - dd if=/proc/procfs-seqfile bs=4 skip=10 count=4
 
-// overwrite first ten entries of sequence file with 10..20
-// seq 10 20 | dd of=/proc/procfs-seqfile
+// overwrite first eleven entries of sequence file with 10..20
+// - seq 10 20 | dd of=/proc/procfs-seqfile
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Emily Portin <portin.emily@protonmail.com>");
@@ -182,7 +182,6 @@ ssize_t procfs_seqfile_proc_write(struct file* file, const char __user* buffer, 
     // always write from buffer[0]
 
     int parsed = 0;
-    size_t count = 0;
     char* token = NULL;
     char* iterator = kbuffer;
 
@@ -202,7 +201,7 @@ ssize_t procfs_seqfile_proc_write(struct file* file, const char __user* buffer, 
         }
 
         parsed = clamp(parsed, 0, U8_MAX);
-        context->buffer[count++] = parsed;
+        context->buffer[i] = parsed;
 
     }
 
