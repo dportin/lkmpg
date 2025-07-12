@@ -5,6 +5,7 @@ SUBDIRS += 04-chardev
 SUBDIRS += 05-procfs-static
 SUBDIRS += 06-procfs-buffer
 SUBDIRS += 07-procfs-inode
+SUBDIRS += 08-procfs-seqfile
 
 BEAR ?= 0
 

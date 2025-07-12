@@ -10,5 +10,7 @@
 *.order
 *.order.cmd
 
+.gdb_history
+
 **/compile_commands.json
 **/.cache

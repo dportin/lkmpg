@@ -1,4 +1,4 @@
-obj-m += procfs-inode.o
+obj-m += procfs-seqfile.o
 ccflags-y += -Wall -Wextra -Werror -Wno-unused-parameter
 
 all:
